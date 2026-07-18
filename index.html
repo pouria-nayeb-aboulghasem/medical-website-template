@@ -20,13 +20,13 @@
 
 </head>
 
-<body class="bg-gray-100 text-gray-600">
+<body class="bg-gray-100 text-gray-500">
 
-  <header class="fixed top-0 left-0 w-full px-3 bg-white shadow">
+  <header class="fixed top-0 left-0 w-full px-3 bg-white shadow z-50">
     <nav class="flex justify-between h-12 items-center container mx-auto md:h-14">
       <!-- logo -->
       <a href="#" class="font-bold flex gap-2">
-        <i class="ri-stethoscope-line"></i> Medical
+        <i class="ri-stethoscope-line text-blue-700"></i> Medical
       </a>
 
       <!-- menu -->
@@ -35,19 +35,19 @@
         <!-- menu content -->
         <ul class="flex flex-col items-center gap-4 md:flex-row md:justify-end md:mr-8 md:gap-8">
           <li>
-            <a href="#home" class="hover:text-blue-500 transition duration-300">Home</a>
+            <a href="#home" class="hover:text-blue-700 transition duration-300">Home</a>
           </li>
           <li>
-            <a href="#delivery" class="hover:text-blue-500 transition duration-300">Delivery</a>
+            <a href="#delivery" class="hover:text-blue-700 transition duration-300">Delivery</a>
           </li>
           <li>
-            <a href="#about" class="hover:text-blue-500 transition duration-300">About</a>
+            <a href="#about" class="hover:text-blue-700 transition duration-300">About</a>
           </li>
           <li>
-            <a href="#price" class="hover:text-blue-500 transition duration-300">Price</a>
+            <a href="#price" class="hover:text-blue-700 transition duration-300">Price</a>
           </li>
           <li>
-            <a href="#contact" class="hover:text-blue-500 transition duration-300">Contact</a>
+            <a href="#contact" class="hover:text-blue-700 transition duration-300">Contact</a>
           </li>
         </ul>
 
@@ -68,6 +68,142 @@
     </nav>
   </header>
 
+  <main class="my-16">
+
+    <!-- home -->
+    <div class="py-4 grid md:grid-cols-2 md:py-16">
+
+      <div class="md:col-span-1"></div>
+
+      <section class="text-center md:text-left md:col-span-1">
+        <h1 class="text-5xl font-bold mb-3 text-gray-700">
+          <span class="font-medium">Get Quick</span>
+          <br> Medical Service
+
+        </h1>
+        <p class="text-lg mb-8 md:text-xl">
+          Get your medical service from a certified <br />
+          doctor and health professional.
+        </p>
+
+        <a href="#" class="px-6 py-3 bg-blue-700 text-white rounded-lg">
+          Get Started
+        </a>
+      </section>
+
+    </div>
+
+    <!-- hero -->
+    <div
+      class="bg-blue-700 grid gap-8 text-white mt-8 pt-12 px-4 md:rounded-lg md:grid-cols-2 md:container md:mx-auto md:pt-4 md:h-84">
+
+      <div class="grid grid-cols-3 items-center md:col-span-1 md:order-2">
+        <div class="col-span-2">
+          <section class="mb-4">
+            <h2 class="text-3xl font-semibold">Dr. Myla Harts</h2>
+            <p>Bones Specialist</p>
+          </section>
+
+          <div class="flex gap-3">
+            <div class="w-32 h-32 flex justify-center items-center rounded-lg text-3xl bg-[rgba(0,0,0,0.25)]">
+              <i class="ri-medicine-bottle-fill"></i>
+            </div>
+            <div class="w-32 h-32 flex justify-center items-center rounded-lg text-3xl bg-[rgba(0,0,0,0.25)]">
+              <i class="ri-24-hours-fill"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-1">
+          <a href="#" class="w-32 h-48 flex flex-col font-bold rounded-lg bg-gray-800 justify-center items-center">
+            <i class="ri-arrow-right-line"></i>
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <figure class="justify-self-center relative md:col-span-1 md:order-1 md:w-full md:h-full">
+        <img src="/home-img.png" alt="" class="w-64 md:w-95 md:absolute md:left-20 md:bottom-0 md:z-10">
+      </figure>
+
+    </div>
+
+    <!-- delivery -->
+    <div class="grid gap-12 md:grid-cols-2 my-12 md:my-20 md:py-20 md:container md:mx-auto">
+
+      <section class="text-center md:text-left md:col-span-1 md:order-2">
+        <h2 class="text-5xl font-bold text-gray-700 mb-4">
+          Vaccine Injections <br>
+          <span>Delivery Service</span>
+        </h2>
+        <p class="text-lg mb-8">
+          We provide door-to-door vaccine and injection delivery
+          services, available to all segments throughout the city.
+        </p>
+
+        <div class="px-4 md:px-0">
+          <ul class="grid grid-cols-2 gap-4 md:gap-8 text-left">
+            <li class="bg-white p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center mb-2 rounded-lg">
+                <i class="ri-home-line"></i>
+              </div>
+              <h4 class="font-bold text-lg">
+                Home Service
+              </h4>
+              <p>
+                Fast home vaccination service.
+              </p>
+            </li>
+            <li class="bg-white p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center mb-2 rounded-lg">
+                <i class="ri-time-line"></i>
+              </div>
+              <h4 class="font-bold text-lg">
+                1 Hour Service
+              </h4>
+              <p>
+                Super easy and quick service for patients.
+              </p>
+            </li>
+            <li class="bg-white p-4 rounded-lg">
+              <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center mb-2 rounded-lg">
+                <i class="ri-star-line"></i>
+              </div>
+              <h4 class="font-bold text-lg">Better Quality</h4>
+              <p>
+                The Best Medicines for Health.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="bg-blue-700 text-white py-8 p-4 md:col-span-1 md:order-1 md:w-84 md:mx-auto md:rounded-lg">
+
+        <div class="text-center">
+          <h3 class="text-3xl font-bold mb-4">
+            Request <br> Vaccination
+          </h3>
+          <p class="bg-[rgba(0,0,0,0.25)] w-32 mx-auto py-2 px-1 rounded-lg">
+            <span>324</span> Patients
+          </p>
+
+          <figure class="w-64 mx-auto block my-8 relative md:w-lg md:h-64 -left-20 -top-8">
+            <img src="/delivery-img.png" alt="" class="absolute">
+          </figure>
+
+          <div class="flex gap-3 justify-center items-center">
+            <a href="#" class="bg-gray-700 text-white py-2 px-6 rounded-lg">
+              Request <i class="ri-arrow-right-s-line"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
 
 
   <script src="src/assets/js/swiper-bundle.min.js"></script>
