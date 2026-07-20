@@ -132,7 +132,7 @@ available for you and your health. Write to me now.
 Write to me
 
 .contact__social
-https://m.me/bedimcode
+https://m.me/
 https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!
 https://web.telegram.org/
 mailto:medical@email.com
@@ -162,11 +162,11 @@ Medical
 Home - About Us - Prices
 
 .footer__social
-https://www.facebook.com/bedimcode
-https://www.instagram.com/bedimcode/
+https://www.facebook.com/pna
+https://www.instagram.com/pna/
 twitter.com/
-https://www.youtube.com/@Bedimcode
+https://www.youtube.com/@pna
 https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!
 
 .footer__copy
-&#169; All Rights Reserved By Bedimcode
+&#169; All Rights Reserved By pna

@@ -1,10 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 body {
   font-family: "Montserrat", sans-serif;
 }
 
 #menu.active {
   @apply top-0;
+}
+
+#menu .active-link {
+  @apply text-blue-700 font-semibold;
+}
+
+#price .swiper {
+  overflow: initial;
+  padding-block: 2rem 5rem;
+}
+
+#price :is(.swiper-slide-prev, .swiper-slide-next) {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+#price .swiper-pagination-bullet.swiper-pagination-horizontal {
+  bottom: -4rem;
+}
+
+#price .price-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  opacity: 0.25;
+  transition: background-color 0.4s;
+}
+
+#price .price-pagination-bullet-active {
+  @apply bg-blue-700;
 }

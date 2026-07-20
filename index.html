@@ -15,14 +15,25 @@
   <link rel="stylesheet" href="src/assets/css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="src/style.css" />
 
+  <!-- script -->
+  <script>
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
   <!-- seo -->
   <title>Medical website template</title>
 
 </head>
 
-<body class="bg-gray-100 text-gray-500">
+<body class="bg-gray-100 text-gray-500 dark:bg-gray-900 dark:text-gray-100">
 
-  <header class="fixed top-0 left-0 w-full px-3 bg-white shadow z-50">
+  <header class="fixed top-0 left-0 w-full px-3 bg-white shadow-xs z-50 dark:bg-gray-900 dark:shadow-white">
     <nav class="flex justify-between h-12 items-center container mx-auto md:h-14">
       <!-- logo -->
       <a href="#" class="font-bold flex gap-2">
@@ -31,7 +42,7 @@
 
       <!-- menu -->
       <div id="menu"
-        class="fixed -top-full left-0 py-10 w-full bg-white transition-all duration-300 shadow md:static md:py-0 md:bg-transparent md:shadow-none">
+        class="fixed -top-full left-0 py-10 w-full bg-white transition-all duration-300 shadow md:static md:py-0 md:bg-transparent md:shadow-none dark:bg-gray-900">
         <!-- menu content -->
         <ul class="flex flex-col items-center gap-4 md:flex-row md:justify-end md:mr-8 md:gap-8">
           <li>
@@ -71,12 +82,12 @@
   <main class="my-16">
 
     <!-- home -->
-    <div class="py-4 grid md:grid-cols-2 md:py-16">
+    <div id="home" class="py-4 grid md:grid-cols-2 md:py-16" data-section="home">
 
       <div class="md:col-span-1"></div>
 
       <section class="text-center md:text-left md:col-span-1">
-        <h1 class="text-5xl font-bold mb-3 text-gray-700">
+        <h1 class="text-5xl font-bold mb-3 text-gray-700 dark:text-white">
           <span class="font-medium">Get Quick</span>
           <br> Medical Service
 
@@ -86,7 +97,8 @@
           doctor and health professional.
         </p>
 
-        <a href="#" class="px-6 py-3 bg-blue-700 text-white rounded-lg">
+        <a href="#"
+          class="px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-white hover:text-blue-700 hover:border hover:border-blue-700 transition duration-300">
           Get Started
         </a>
       </section>
@@ -115,7 +127,8 @@
         </div>
 
         <div class="col-span-1">
-          <a href="#" class="w-32 h-48 flex flex-col font-bold rounded-lg bg-gray-800 justify-center items-center">
+          <a href="#contact"
+            class="w-32 h-48 flex flex-col font-bold rounded-lg bg-gray-800 justify-center items-center hover:bg-white hover:text-blue-700 transtion duration-300">
             <i class="ri-arrow-right-line"></i>
             Contact
           </a>
@@ -129,10 +142,11 @@
     </div>
 
     <!-- delivery -->
-    <div class="grid gap-12 md:grid-cols-2 my-12 md:my-20 md:py-20 md:container md:mx-auto">
+    <div id="delivery" class="grid gap-12 md:grid-cols-2 my-12 md:my-20 md:py-20 md:container md:mx-auto"
+      data-section="delivery">
 
       <section class="text-center md:text-left md:col-span-1 md:order-2">
-        <h2 class="text-5xl font-bold text-gray-700 mb-4">
+        <h2 class="text-5xl font-bold text-gray-700 dark:text-white mb-4">
           Vaccine Injections <br>
           <span>Delivery Service</span>
         </h2>
@@ -143,7 +157,7 @@
 
         <div class="px-4 md:px-0">
           <ul class="grid grid-cols-2 gap-4 md:gap-8 text-left">
-            <li class="bg-white p-4 rounded-lg">
+            <li class="bg-white p-4 rounded-lg dark:bg-gray-700">
               <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center mb-2 rounded-lg">
                 <i class="ri-home-line"></i>
               </div>
@@ -154,7 +168,7 @@
                 Fast home vaccination service.
               </p>
             </li>
-            <li class="bg-white p-4 rounded-lg">
+            <li class="bg-white p-4 rounded-lg dark:bg-gray-700">
               <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center mb-2 rounded-lg">
                 <i class="ri-time-line"></i>
               </div>
@@ -165,7 +179,7 @@
                 Super easy and quick service for patients.
               </p>
             </li>
-            <li class="bg-white p-4 rounded-lg">
+            <li class="bg-white p-4 rounded-lg dark:bg-gray-700">
               <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center mb-2 rounded-lg">
                 <i class="ri-star-line"></i>
               </div>
@@ -188,12 +202,13 @@
             <span>324</span> Patients
           </p>
 
-          <figure class="w-64 mx-auto block my-8 relative md:w-lg md:h-64 -left-20 -top-8">
-            <img src="/delivery-img.png" alt="" class="absolute">
+          <figure class="w-64 mx-auto block my-8 md:relative md:w-lg md:h-64 md:-left-20 md:-top-8">
+            <img src="/delivery-img.png" alt="" class="md:absolute">
           </figure>
 
           <div class="flex gap-3 justify-center items-center">
-            <a href="#" class="bg-gray-700 text-white py-2 px-6 rounded-lg">
+            <a href="#"
+              class="bg-gray-700 text-white py-2 px-6 rounded-lg hover:bg-white hover:text-blue-700 transition duration-300">
               Request <i class="ri-arrow-right-s-line"></i>
             </a>
           </div>
@@ -203,11 +218,329 @@
 
     </div>
 
+    <!-- about -->
+    <div id="about"
+      class="bg-blue-900 px-4 py-18 grid md:grid-cols-2 gap-4 items-center container mx-auto rounded-lg md:px-12"
+      data-section="about">
+
+      <section class="text-center text-white mb-12 md:col-span-1 md:text-left">
+
+        <header>
+          <h2 class="text-4xl md:text-5xl font-bold mb-3">
+            <span class="font-medium">We Have Certified</span>
+            <br> Medical Service
+          </h2>
+          <p class="mb-6 md:md:12">
+            Don't worry, we have certified medical services, so
+            you can receive medical consultations in any specialty.
+          </p>
+        </header>
+
+        <ul class="grid grid-cols-3 mb-8 md:justify-start md:mb-12">
+          <li class="border-r md:pl-8">
+            <h5 class="text-3xl">256</h5>
+            <p class="text-xs text-gray-400">
+              Healthy <br> Patients
+            </p>
+          </li>
+          <li class="md:pl-8">
+            <h5 class="text-3xl">16</h5>
+            <p class="text-xs text-gray-400">Hospital <br> Care</p>
+          </li>
+          <li class="border-l md:pl-8">
+            <h5 class="text-3xl">8</h5>
+            <p class="text-xs text-gray-400">Years Of <br> Experience</p>
+          </li>
+        </ul>
+
+        <div>
+          <a href="#" class="flex gap-3 justify-center md:justify-start hover:text-blue-200 transition duration-300">
+            Contact Me
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+      </section>
+
+      <figure class="max-w-64 mx-auto block md:col-span-1 md:max-w-sm">
+        <img src="/about-img.png" alt="" class="rounded-lg w-full">
+      </figure>
+
+    </div>
+
+    <!-- price -->
+    <section id="price" class="my-18 overflow-hidden" data-section="price">
+
+      <header class="text-center mb-8">
+        <h2 class="text-4xl font-bold mb-4">
+          <span class="font-normal">Affordable Prices To</span>
+          <br> Check Your Health
+        </h2>
+        <p>
+          Get the best prices, make inquiries, checkups, and
+          visit your home. Schedule your consultation now.
+        </p>
+      </header>
+
+      <div class="swiper w-92 md:w-lg">
+        <ul class="swiper-wrapper">
+          <li class="w-full swiper-slide">
+            <section class="bg-white rounded-lg border-gray-100 overflow-hidden dark:bg-gray-700">
+              <header class="bg-blue-700 text-white p-4 flex flex-col">
+                <h6 class="text-4xl">$15</h6>
+                <p class="font-bold self-end">Health Consultations</p>
+              </header>
+
+              <div class="px-6 py-8">
+                <ul class="flex flex-col gap-2">
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Consultations about your health.
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Ask any questions about your health.
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Take your time without limits.
+                  </li>
+                </ul>
+
+              </div>
+            </section>
+          </li>
+
+          <li class="w-full swiper-slide">
+            <section class="bg-white rounded-lg overflow-hidden dark:bg-gray-700">
+              <header class="bg-blue-700 text-white p-4 flex flex-col">
+                <h6 class="text-4xl">$35</h6>
+                <p class="font-bold self-end">Delivery Service</p>
+              </header>
+
+              <div class="px-6 py-8">
+                <ul class="flex flex-col gap-2">
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    We offer delivery service.
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    We come to your home for service.
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Available 24 hours a day.
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </li>
+
+          <li class="w-full swiper-slide">
+            <section class="bg-white rounded-lg overflow-hidden dark:bg-gray-700">
+              <header class="bg-blue-700 text-white p-4 flex flex-col">
+                <h6 class="text-4xl">$125</h6>
+                <p class="font-bold self-end">Medical Attention</p>
+              </header>
+
+              <div class="px-6 py-8">
+                <ul class="flex flex-col gap-2">
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Instant check-ups on your health.
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Primary attention on the patient.
+                  </li>
+                  <li>
+                    <i class="ri-checkbox-circle-fill text-green-700"></i>
+                    Monitoring your health for up to a week.
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </li>
+        </ul>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </section>
+
+    <!-- gallery -->
+    <div class="grid grid-col-2 grid-row-3 gap-6 container my-18 mx-auto rounded-lg px-4">
+      <figure class="w-full h-84 col-span-2">
+        <img src="/gallery-img-1.png" alt="" class="w-full h-full object-cover rounded-lg">
+      </figure>
+
+      <figure class="w-full h-175 col-span-1 row-span-2">
+        <img src="/gallery-img-2.png" alt="" class="w-full h-full object-cover rounded-lg">
+      </figure>
+
+      <figure class="w-full h-84 col-span-1 row-span-1">
+        <img src="/gallery-img-3.png" alt="" class="w-full h-full object-cover rounded-lg">
+      </figure>
+
+      <figure class="w-full h-84 col-span-1 row-span-1">
+        <img src="/gallery-img-4.png" alt="" class="w-full h-full object-cover rounded-lg">
+      </figure>
+    </div>
+
+    <!-- contact -->
+    <div id="contact" class="container mx-auto px-4 my-18 md:grid md:grid-cols-2 md:items-center"
+      data-section="contact">
+
+      <section class="md:col-span-1">
+        <header class="text-center mb-6 md:text-left">
+          <h2 class="text-4xl font-bold mb-3 text-gray-700 dark:text-white">
+            Contact Me <br>
+            <span class="font-medium">On All Platforms</span>
+          </h2>
+          <p>
+            Contact me on all my social media channels. I'm
+            available for you and your health. Write to me now.
+          </p>
+        </header>
+
+        <ul class="grid grid-cols-2 gap-4 text-center md:text-left">
+          <li class="flex flex-col items-center md:items-start">
+            <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center rounded-lg mb-2">
+              <i class="ri-mail-open-line"></i>
+            </div>
+            <h5 class="font-bold">Write to me</h5>
+
+            <ul class="flex gap-4 font-bold text-lg mt-2">
+              <li>
+                <a href="#">
+                  <i class="ri-telegram-line"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="ri-whatsapp-line"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="ri-youtube-line"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="flex flex-col items-center md:items-start">
+            <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center rounded-lg mb-2">
+              <i class="ri-map-pin-line"></i>
+            </div>
+            <h5 class="font-bold">Location</h5>
+            <p class="mt-2">
+              Tehran - Iran <br>
+              Av. Shraiati #0123
+            </p>
+          </li>
+
+          <li class="flex flex-col items-center md:items-start">
+            <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center rounded-lg mb-2">
+              <i class="ri-error-warning-line"></i>
+            </div>
+            <h5 class="font-bold">Attention</h5>
+            <p class="mt-2">
+              Monday - Friday <br>
+              8am - 6pm
+            </p>
+          </li>
+
+          <li class="flex flex-col items-center md:items-start">
+            <div class="w-8 h-8 bg-blue-700 text-white flex justify-center items-center rounded-lg mb-2">
+              <i class="ri-customer-service-2-line"></i>
+            </div>
+            <h5 class="font-bold">Phone number</h5>
+            <p class="mt-2">
+              +0123(00)-765-4321 <br>
+              +00-0123456
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <div class="mt-12 w-full h-84 mx-auto md:col-span-1">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5361947506367!2d51.508463910819465!3d35.73762357245474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e032a4aa5521f%3A0x695dfb88a6f45753!2z2KLbjCDZgduM2KrZhtiz!5e0!3m2!1sen!2s!4v1784538347355!5m2!1sen!2s"
+          class="w-full h-full" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+
+    </div>
   </main>
 
+  <footer class="text-center grid gap-4 mb-5 pt-18 md:grid-cols-3">
+    <!-- logo -->
+    <a href="#" class="text-xl font-bold">
+      <i class="ri-stethoscope-line text-blue-700"></i> Medical
+    </a>
+
+    <!-- quick access -->
+    <ul class="flex gap-4 justify-center">
+      <li>
+        <a href="#home" class="hover:text-blue-700 transition duration-300">Home</a>
+      </li>
+      <li>
+        <a href="#about" class="hover:text-blue-700 transition duration-300">About</a>
+      </li>
+      <li>
+        <a href="#contact" class="hover:text-blue-700 transition duration-300">Contact</a>
+      </li>
+    </ul>
+
+    <!-- social media -->
+    <ul class="flex justify-center gap-4 font-bold text-lg">
+      <li>
+        <a href="#" class="hover:text-blue-700 transition-all hover:-translate-y-1 block duration-300">
+          <i class="ri-telegram-line"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="hover:text-blue-700 transition-all hover:-translate-y-1 block duration-300">
+          <i class="ri-whatsapp-line"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="hover:text-blue-700 transition-all hover:-translate-y-1 block duration-300">
+          <i class="ri-youtube-line"></i>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <div class="text-center text-sm">&copy; 2026 - All rights reserved.</div>
 
   <script src="src/assets/js/swiper-bundle.min.js"></script>
   <script src="src/script.js"></script>
+  <script>
+    const btn = document.getElementById("toggle-theme");
+
+    btn.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+
+      if (document.documentElement.classList.contains("dark")) {
+        localStorage.theme = "dark";
+        toggleIcon();
+      } else {
+        localStorage.theme = "light";
+        toggleIcon();
+      }
+    });
+
+    function toggleIcon() {
+      if (btn.classList.contains("ri-sun-line")) {
+        btn.classList.remove("ri-sun-line");
+      } else {
+        btn.classList.add("ri-sun-line");
+      }
+    }
+  </script>
 </body>
 
 </html>
